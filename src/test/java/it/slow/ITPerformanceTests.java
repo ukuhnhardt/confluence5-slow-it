@@ -13,6 +13,7 @@ public class ITPerformanceTests extends AbstractConfluencePluginWebTestCase {
     private SpaceHelper spaceHelper;
     private PageHelper pageHelper;
     private final int NUM_PAGES = 0;
+    private boolean once = true;
 
     @Before
     public void setUp() throws Exception {
@@ -25,6 +26,11 @@ public class ITPerformanceTests extends AbstractConfluencePluginWebTestCase {
         assertTrue(spaceHelper.create());
 
         pageHelper = getPageHelper();
+        if (once){
+            gotoPage("");
+            System.out.println("Confluence Version : " + getElementTextByXPath("//span[@id='footer-build-information']"));
+            once = false;
+        }
     }
     
     @After
