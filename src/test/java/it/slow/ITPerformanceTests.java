@@ -13,7 +13,7 @@ public class ITPerformanceTests extends AbstractConfluencePluginWebTestCase {
     private SpaceHelper spaceHelper;
     private PageHelper pageHelper;
     private final int NUM_PAGES = 0;
-    private boolean once = true;
+    private static boolean once = true;
 
     @Before
     public void setUp() throws Exception {
